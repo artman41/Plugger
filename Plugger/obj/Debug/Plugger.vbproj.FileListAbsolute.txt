@@ -1,0 +1,12 @@
+C:\Users\Tyler\AppData\Local\Temporary Projects\Plugger\bin\Debug\Plugger.exe.config
+C:\Users\Tyler\Documents\GitHub\Plugger\Plugger\bin\Debug\Plugger.exe.config
+C:\Users\Tyler\Documents\GitHub\Plugger\Plugger\bin\Debug\Plugger.exe
+C:\Users\Tyler\Documents\GitHub\Plugger\Plugger\bin\Debug\Plugger.pdb
+C:\Users\Tyler\Documents\GitHub\Plugger\Plugger\bin\Debug\Plugger.xml
+C:\Users\Tyler\Documents\GitHub\Plugger\Plugger\obj\Debug\Plugger.Main.resources
+C:\Users\Tyler\Documents\GitHub\Plugger\Plugger\obj\Debug\Plugger.Resources.resources
+C:\Users\Tyler\Documents\GitHub\Plugger\Plugger\obj\Debug\Plugger.vbproj.GenerateResource.Cache
+C:\Users\Tyler\Documents\GitHub\Plugger\Plugger\obj\Debug\Plugger.exe
+C:\Users\Tyler\Documents\GitHub\Plugger\Plugger\obj\Debug\Plugger.xml
+C:\Users\Tyler\Documents\GitHub\Plugger\Plugger\obj\Debug\Plugger.pdb
+C:\Users\Tyler\Documents\GitHub\Plugger\Plugger\obj\Debug\Plugger.vbprojResolveAssemblyReference.cache
