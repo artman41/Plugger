@@ -10,4 +10,7 @@ C:\Users\Tyler\Documents\GitHub\Plugger\Plugger\obj\Debug\Plugger.exe
 C:\Users\Tyler\Documents\GitHub\Plugger\Plugger\obj\Debug\Plugger.xml
 C:\Users\Tyler\Documents\GitHub\Plugger\Plugger\obj\Debug\Plugger.pdb
 C:\Users\Tyler\Documents\GitHub\Plugger\Plugger\obj\Debug\Plugger.vbprojResolveAssemblyReference.cache
+<<<<<<< HEAD
 C:\Users\Tyler\Documents\GitHub\Plugger\Plugger\obj\Debug\Plugger.Creator.resources
+=======
+>>>>>>> origin/master

@@ -130,18 +130,30 @@ Partial Class Main
         'ViewHelpToolStripMenuItem
         '
         Me.ViewHelpToolStripMenuItem.Name = "ViewHelpToolStripMenuItem"
+<<<<<<< HEAD
         Me.ViewHelpToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+=======
+        Me.ViewHelpToolStripMenuItem.Size = New System.Drawing.Size(148, 22)
+>>>>>>> origin/master
         Me.ViewHelpToolStripMenuItem.Text = "Instructions"
         '
         'ToolStripMenuItem2
         '
         Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
+<<<<<<< HEAD
         Me.ToolStripMenuItem2.Size = New System.Drawing.Size(149, 6)
+=======
+        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(145, 6)
+>>>>>>> origin/master
         '
         'AboutArtmanToolStripMenuItem
         '
         Me.AboutArtmanToolStripMenuItem.Name = "AboutArtmanToolStripMenuItem"
+<<<<<<< HEAD
         Me.AboutArtmanToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+=======
+        Me.AboutArtmanToolStripMenuItem.Size = New System.Drawing.Size(148, 22)
+>>>>>>> origin/master
         Me.AboutArtmanToolStripMenuItem.Text = "About artman"
         '
         'PluginList

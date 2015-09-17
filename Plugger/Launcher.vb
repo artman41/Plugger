@@ -4,7 +4,10 @@
 
     Private Function initialize() As Boolean
         IO.Directory.CreateDirectory(ref.PluginsDir) ' To make sure that the plugins folder exists
+<<<<<<< HEAD
         IO.Directory.CreateDirectory(ref.TempDir) ' To make sure that the plugins folder exists
+=======
+>>>>>>> origin/master
 
         PluginList.DisplayMember = "Text"
 
@@ -70,8 +73,11 @@
     Private Sub AboutArtmanToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AboutArtmanToolStripMenuItem.Click
         MsgBox("I created this program as a precursor to my A-Level project.")
     End Sub
+<<<<<<< HEAD
 
     Private Sub CreateAPluginToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CreateAPluginToolStripMenuItem.Click
         Creator.ShowDialog()
     End Sub
+=======
+>>>>>>> origin/master
 End Class
