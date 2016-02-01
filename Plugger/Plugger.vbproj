@@ -12,10 +12,7 @@
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-<<<<<<< HEAD
     <IsWebBootstrapper>false</IsWebBootstrapper>
-=======
->>>>>>> origin/master
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -27,12 +24,8 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
-<<<<<<< HEAD
-    <ApplicationVersion>0.0.1.%2a</ApplicationVersion>
-=======
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <IsWebBootstrapper>false</IsWebBootstrapper>
->>>>>>> origin/master
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -95,15 +88,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
     <Compile Include="Creator.Designer.vb">
       <DependentUpon>Creator.vb</DependentUpon>
     </Compile>
     <Compile Include="Creator.vb">
       <SubType>Form</SubType>
     </Compile>
-=======
->>>>>>> origin/master
     <Compile Include="References.vb" />
     <Compile Include="Launcher.vb">
       <SubType>Form</SubType>
@@ -130,12 +120,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
     <EmbeddedResource Include="Creator.resx">
       <DependentUpon>Creator.vb</DependentUpon>
     </EmbeddedResource>
-=======
->>>>>>> origin/master
     <EmbeddedResource Include="Launcher.resx">
       <DependentUpon>Launcher.vb</DependentUpon>
     </EmbeddedResource>

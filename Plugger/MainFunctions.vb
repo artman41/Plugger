@@ -20,11 +20,7 @@ Public Class MainFunctions
         Try
             For index = 0 To loadedPlugins.GetUpperBound(0)
                 Try
-<<<<<<< HEAD
                     Using reader As StreamReader = New StreamReader(ZipFile.Open(loadedPlugins(index), ZipArchiveMode.Read).GetEntry("info.txt").Open())
-=======
-                    Using reader As StreamReader = New StreamReader(ZipFile.Open(loadedPlugins(0), ZipArchiveMode.Read).GetEntry("info.txt").Open())
->>>>>>> origin/master
                         Dim name As String = reader.ReadLine()
                         Dim path As String = reader.ReadLine()
                         Dim desc As String = reader.ReadLine()
