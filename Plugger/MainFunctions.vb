@@ -13,7 +13,13 @@ Public Class MainFunctions
         Return files
 
     End Function
-
+    ''' <summary>
+    ''' <para>Loads in the plugins into the given CheckedListBox</para>
+    ''' <para>item.Name = name</para>
+    ''' <para>item.Tag = path + "╔" + desc</para>
+    ''' </summary>
+    ''' <param name="clb">Checked List Box</param>
+    ''' <returns></returns>
     Public Function loadPlugins(clb As CheckedListBox) As Boolean
         Dim loadedPlugins As Array = getPlugins(ref.PluginsDir)
 
@@ -27,12 +33,14 @@ Public Class MainFunctions
 
                         Dim item As ListViewItem = New ListViewItem(name) '.Split("|")(0))
                         item.Name = name '.Split("|")(0)
-                        item.Tag = path + "╔" + desc '.Split("|")(0)
+                        item.Tag = path & "╔" & desc '.Split("|")(0)
 
                         clb.Items.Add(item)
                     End Using
+                    Return True
                 Catch ex As InvalidExpressionException
                     Console.Write(ex)
+                    Return False
                 End Try
             Next
 
@@ -62,4 +70,22 @@ Public Class MainFunctions
         End Try
 
     End Function
+
+    Public Sub cleanPlugin(ByVal name As String)
+        Debug.WriteLine(ref.AppDataDir & name & "\")
+        For Each item In Directory.GetFiles(ref.AppDataDir & name & "\")
+            File.Delete(item)
+        Next
+        Directory.Delete(ref.AppDataDir & name & "\")
+    End Sub
+
+    Public Sub loadPlugin(ByVal name As String)
+        Directory.CreateDirectory(ref.AppDataDir & name & "\")
+        ZipFile.ExtractToDirectory(ref.PluginsDir & name & ".plugin", ref.AppDataDir & name & "\")
+        For Each item In Directory.GetFiles(ref.AppDataDir & name & "\")
+            If item.Split("\")(item.Split("\").Length - 1).Equals("info.txt") Then
+                File.Delete(item)
+            End If
+        Next
+    End Sub
 End Class

@@ -6,6 +6,15 @@ Plugger
 </name>
 </assembly>
 <members>
+<member name="M:Plugger.MainFunctions.loadPlugins(System.Windows.Forms.CheckedListBox)">
+ <summary>
+ <para>Loads in the plugins into the given CheckedListBox</para>
+ <para>item.Name = name</para>
+ <para>item.Tag = path + "╔" + desc</para>
+ </summary>
+ <param name="clb">Checked List Box</param>
+ <returns></returns>
+</member>
 <member name="T:Plugger.My.Resources.Resources">
 <summary>
   A strongly-typed resource class, for looking up localized strings, etc.

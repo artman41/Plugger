@@ -5,17 +5,41 @@ Public Class Creator
     Dim PluginPath As String
     Dim rbtnContextName As String
 
+    Dim Func As MainFunctions
+    Dim Launcher As Main
+
+    Private Sub Creator_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        If Not Directory.Exists(ref.TempDir) Then
+            Directory.CreateDirectory(ref.TempDir)
+            Debug.WriteLine("TempDir created at " & ref.TempDir)
+        Else
+            For Each item In Directory.GetFiles(ref.TempDir)
+                File.Delete(item)
+            Next
+            Directory.Delete(ref.TempDir)
+            Creator_Load(sender, e)
+        End If
+
+        If Not Directory.Exists(ref.AppDataDir) Then
+            Directory.CreateDirectory(ref.AppDataDir)
+        End If
+    End Sub
+
     Private Sub SavePlugin_Click(sender As Object, e As EventArgs) Handles SavePlugin.Click
-
+        Dim i = 0
         If Not PluginPath = Nothing Then
-            Console.Write(ref.TempDir + "info.txt")
+            Debug.Write(ref.TempDir + "info.txt")
 
-            File.Create(ref.TempDir + "info.txt").Dispose() 'error when attmepting to create file. Will need to fix for rest to work
+            File.Create(ref.TempDir + "info.txt").Dispose()
+
+            For Each item As RadioButton In FileHolder.Controls
+                File.Copy(item.Tag, ref.TempDir & item.Text)
+            Next
 
             Using sw As StreamWriter = New StreamWriter(ref.TempDir + "info.txt")
                 sw.WriteLine(PluginName.Text)
-                sw.WriteLine(PluginPath)
-                sw.WriteLine(PluginDescription.Name)
+                sw.WriteLine(PluginPath.Split("\")(PluginPath.Split("\").Length - 1))
+                sw.WriteLine(PluginDescription.Text)
                 sw.Close()
             End Using
 
@@ -28,7 +52,10 @@ Public Class Creator
             Next
 
         Else
-            MsgBox("You need to add a file to the plugin and choose it as the executable!")
+            If i = 0 Then
+                MsgBox("You need to add a file to the plugin and choose it as the executable!")
+                i += 1
+            End If
         End If
     End Sub
 
@@ -74,30 +101,40 @@ Public Class Creator
 
         Dim rbtn As RadioButton = DirectCast(sender, RadioButton)
 
-        If rbtn.Checked Then
-            PluginPath = rbtn.Tag
+        If rbtn.Text.Split(".")(rbtn.Text.Split(".").Length - 1).ToLower().Equals("vb") Then
+            If rbtn.Checked Then
+                PluginPath = rbtn.Tag
+            End If
+        Else
+            Debug.WriteLine(rbtn.Text.Split(".")(rbtn.Text.Split(".").Length - 1).ToLower())
+            MsgBox("Please select a vb file!")
+            rbtn.Checked = False
         End If
     End Sub
 
     Private Sub rButtonContext_Opening(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles rButtonContext.Opening
-        rbtnContextName = "rbt_" + DirectCast(sender, ContextMenuStrip).SourceControl.Name
-        Console.WriteLine("rbt_" + DirectCast(sender, ContextMenuStrip).SourceControl.Parent.Name)
+        rbtnContextName = DirectCast(sender, ContextMenuStrip).SourceControl.Name
+        Debug.WriteLine("rbtnContextName : " & DirectCast(sender, ContextMenuStrip).SourceControl.Name)
     End Sub
 
     Private Sub DeleteItemToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DeleteItemToolStripMenuItem.Click
-        Console.WriteLine(rbtnContextName)
-        FileHolder.Container.Remove(FileHolder.Container.Components.Item(rbtnContextName))
+        Debug.WriteLine(rbtnContextName)
+        Debug.WriteLine(FileHolder.Container)
+        FileHolder.Controls.Remove(FileHolder.Controls.Item(rbtnContextName))
     End Sub
 
     Private Sub Creator_Closed(sender As Object, e As EventArgs) Handles Me.Closed
         Try
             For Each item As ComponentModel.Component In FileHolder.Container.Components
-                Console.WriteLine(item.GetType())
+                Debug.WriteLine(item.GetType())
                 FileHolder.Container.Remove(item)
             Next
         Catch ex As Exception
-            Console.WriteLine("Exception: " + ex.Message)
-            Console.WriteLine("Exception: " + ex.StackTrace)
+            Debug.WriteLine("Exception: " + ex.Message)
+            Debug.WriteLine("Exception: " + ex.StackTrace)
         End Try
+
+        Launcher.PluginList.Items.Clear()
+        Func.loadPlugins(Launcher.PluginList)
     End Sub
 End Class

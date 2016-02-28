@@ -88,12 +88,12 @@ Partial Class Creator
         '
         Me.rButtonContext.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DeleteItemToolStripMenuItem})
         Me.rButtonContext.Name = "rButtonContext"
-        Me.rButtonContext.Size = New System.Drawing.Size(153, 48)
+        Me.rButtonContext.Size = New System.Drawing.Size(135, 26)
         '
         'DeleteItemToolStripMenuItem
         '
         Me.DeleteItemToolStripMenuItem.Name = "DeleteItemToolStripMenuItem"
-        Me.DeleteItemToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.DeleteItemToolStripMenuItem.Size = New System.Drawing.Size(134, 22)
         Me.DeleteItemToolStripMenuItem.Text = "Delete Item"
         '
         'Creator
